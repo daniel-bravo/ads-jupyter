@@ -17,7 +17,6 @@ Resources:
               - 'pricing:GetAttributeValues'
               - 'pricing:GetProducts'
             Resource: '*'
-      ManagedPolicyName: allow-jupyter-pricing-api
   JupyterNotebookIAMRole:
     Type: AWS::IAM::Role
     Properties:
@@ -34,7 +33,6 @@ Resources:
       ManagedPolicyArns:
         - !Ref JupyterNotebookIAMPolicy
         - arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
-      RoleName: ads-blog-pricing-api-jupyter
   JupyterNotebookInstanceAds:
     Type: AWS::SageMaker::NotebookInstance
     Properties:
